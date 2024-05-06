@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: hsl(216, 12%, 8%);
+    font-family: 'Overpass', sans-serif;
+}
+.container-fluid{
+    width: 460px;
+    border-radius: 10%;
+    margin:10% 35%;
+    background-color: hsl(213, 19%, 18%);
+    padding-top: 30px;
+    padding-left: 32px;
+    line-height: 2;
+}
+.title-heading{
+    font-size: 35px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+
+.intro{
+    margin-top: 20px;
+}
+.star{
+    background-color:hsl(210, 23%, 12%);
+    display: inline-block;
+    padding: 5px 13px 4px 14px;
+    border-radius: 100%;
+}
+.para{
+    color:hsl(217, 12%, 63%);
+    font-weight: 400;
+}
+.rating{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 15px;
+    color: white;
+}
+.rate{
+    margin: 20px;
+    display: inline-block;
+    padding: 7px 18px 4px 18px;
+    border-radius: 100%;
+    background-color:hsl(210, 23%, 12%);
+}
+.buttonClass {
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-family: 'Overpass', sans-serif;
+    font-size:15px;
+    width:390px;
+    height:45px;
+    border-width:0px;
+    color:#fff;
+    font-weight:400;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px; 
+    background:hsl(25, 97%, 53%);
+}
+
+.submit{
+    margin-left: 4px;
+}
+.buttonClass:hover {
+    background-color: orange;
+}
+.rate:hover {
+    background-color: hsl(25, 97%, 53%);
+}
+@media (max-width:800px){
+    #container{
+        position: relative;
+        top: 90px;
+        right: 125px;
+    }
+    .container-fluid{
+        border-radius: 5%;
+        height: 465px;
+        width: 400px;
+    }
+    .submit{
+        position: relative;
+        right: 4px;
+    }
+    .buttonClass {
+        width: 335px;
+        height: 50px;
+    }
+    .rate{
+        margin: 13px;
+    }
+    .rating{
+        position: relative;
+        right: 15px;
+    }
+}
+@media (min-width:800px) and (max-width:1100px){
+    .container-fluid{
+        position: relative;
+        top:85px;
+        right: 10%;
+    }
+}

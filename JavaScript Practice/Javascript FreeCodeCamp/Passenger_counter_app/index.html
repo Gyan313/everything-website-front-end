@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passsenger Counter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>People entered:</h1>
+      <h2 id="count-el">0</h2>
+
+      <button id="increment-btn" onclick="increment()">INCREMENT</button>
+      <!-- see above onclick="increment()" it is a event listener so when you click on the 
+            increment button on the page you will see the increment() function got triggered.
+            Look increment() in the index.js file.
+      -->
+
+      <button id="save-btn" onclick="save()">SAVE</button>
+      <!-- same onclick on the save btn as increment btn -->
+
+      <p id="save-el">Previous entries:</p>
+    </div>
+    <script src="index.js"></script>
+
+    <!-- You should always include javascript file link in the last of the body -->
+    <!-- using (<script src="index.js"></script>) this you include js file in the folder.  -->
+  </body>
+</html>

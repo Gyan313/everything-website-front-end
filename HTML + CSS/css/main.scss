@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Poppins&display=swap");
+
+/*
+    Remember --->
+    1) when writing html code, in mind always think of desktop layout not mobile.
+    2) When writing css code, in mind always think of mobile layout first and after making for mobile then make website for desktop.
+*/
+
+:root {
+  --primary-color: #31087b;
+  --second-color: #fb2576;
+}
+// Custom made Properties
+
+/*
+    --> Above ":root" is a keyword and it is a way to make custom    made properties.
+    ---> WE make custom-properties when one property is being used all over the css file, and if we want to change it's value then we can just change its value from a one location( making this generic).
+    --> to use these properties, we need to use ## variable(<property-name>) .
+    Ex-- color:var(--primary-color); --> on line 48
+*/
+
+// In body tag, we write css which is common to all the body of the website and remove the default css ore-done in a website for us.
+body {
+  background-color: #ecf8f9;
+  margin: 0; // there is some default margin on the website so we made it 0
+  font-family: "Overpass", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+// syntax
+/* 
+    selector{
+        styles
+    }
+*/
+
+// It is a good practice to keep the css selectors in order same as they are occuring in the html code.It make code more readable and clean.
+
+// If you to inspect on webpage, you see padding --> green color and maargin ---> orange color.
+
+// We used css 1st on the navbar
+.navbar {
+  background: white;
+  padding: 1%;
+
+  .logo {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-color); // text color
+    font-size: 30px;
+
+    span {
+      color: var(--second-color);
+    }
+  }
+
+  .mobile-menu-exit {
+    cursor: pointer;
+    float: right;
+    margin: 1rem;
+  }
+
+  nav.mobile-btn {
+    display: block; // --> to change the nav display from "none" to "block"
+  }
+
+  nav {
+    display: none; // to hide whole navbar, do this after designing whole drop-down box below
+    position: fixed;
+    background-color: rgb(45, 43, 43);
+    z-index: 999; // ---> a very high value of z-index, means this is sit on top of everything on the webpage.
+    // z-index is used to put things on top of each other and it is only used if position is set to "fixed" or "absolute"
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh; // vh is a unit represent the value relative to the webpage dimensions
+    // So, 100vh means whole web page
+    padding: 1rem;
+
+    ul.primary-nav {
+      margin-top: 5rem;
+    }
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        margin: 1rem;
+        font-size: 1.3rem;
+        text-align: right;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    place-content: space-between;
+    // seperated "menu" button and "Bloggy's blog" text, push them either side of the page
+  }
+
+  .mobile-menu {
+    // hamburgur button
+    margin: 1.5rem; // aligning hamburger menu with Bloggy's blog name
+    cursor: pointer; // now if you take arrow on that 3 bars icon, it will change to hand
+  }
+}
+
+// After navbar, 2nd we are using css on the individual selectors, and doing changes which are to be done in all over those selectors irrespective of classes or id they contain..
+
+// make text color of all links to #444444
+a {
+  color: #444444;
+}
+
+// getting rid of all bullet points in the unordered list
+ul {
+  list-style-type: none;
+  // removing all default padding and margin
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  // padding: top right bottom left; --> works like "clock"
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+
+.left-col {
+  .subhead {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgb(106, 106, 168);
+    letter-spacing: 0.1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.3em;
+    margin-top: 0; // making subhead this h1 closer
+    color: var(--primary-color);
+  }
+
+  // lets make "try for free" button
+  .primary-cta {
+    background-color: var(--second-color);
+    color: white;
+    text-decoration: none; // get rid of the underline of the text
+    padding: 0.6rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 8rem; // the greater border-radius from 0rem the more round the corners will become
+    font-weight: bolder;
+    display: inline-block;
+  }
+
+  // Aligning the video icon with the "watch video" text
+  .watch-video-cta {
+    display: block; // making video icon to take whole line or block for itself.
+    margin-top: 1.5rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.hero-image-cta {
+  width: 70%;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+//                            <------- features section ------>
+
+.features-section {
+  background-color: #20272e;
+  color: white;
+}
+
+ul.features-list {
+  margin: 0;
+  padding-left: 0.1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  // above repeat() cause we want the feature to be in different columns when seeing them on pc
+  // we dont want them each to take up 1 row on the desktop size.
+
+  li {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    position: relative; // ---> so that we can do position: absolute in &::before
+
+    &::before {
+      //----> & is specific to scss file but "::before" is a pseudo selector used to put
+      //      content before the content of the selector we are using it in.
+      // In main.css it will look like li::before
+
+      content: " ";
+      position: absolute;
+      left: 1.5em;
+      width: 20px;
+      height: 20px;
+      background-image: url(../Images/bullet.svg);
+      background-size: contain; //---> this will make the bullets get contained in the width and height specified
+      margin-left: -3.6rem; // --> shifted the green tick to the left,so, when margin or padding becoming very small <0.1 than use values in -ve.
+    }
+  }
+}
+
+.features-section-img {
+  display: none; //---> to hide the image
+}
+
+.testimonial-section {
+  background-color: #af0171;
+  // coverting each 'li' into card
+  li {
+    background-color: #fb2576;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin: 0 auto 5rem auto; // ---> margin on (right and left) = auto let the content in "li" centered
+    border-radius: 1rem; // --> round the edges of each "li"
+    img {
+      // below height and width made the size of the image small
+      height: 7em;
+      width: 7em;
+      border: 4px solid #fb2576; //--> border : <width> <line-style> <border-color>;
+      border-radius: 50%; //--> make image round
+      margin-top: -70px; // --> getting the image on the top of the each "card"
+    }
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+label {
+  display: block; //--> to stack these names on there corresponding box
+  margin: 30px 0 20px 0;
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  box-sizing: border-box; // --> to make every box of same width.
+}
+
+// ".submit-button" can be written as "input[type="submit"]"
+// This is another way we can write selector
+.submit-button {
+  width: 40%;
+  border-radius: 5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: var(--second-color);
+  color: white;
+  margin-bottom: 5rem;
+  border: none;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  width: unset; //---> due to this the size of the submit button remains same in both the mobile size and pc size
+  cursor: pointer;
+}
+
+iframe {
+  // --> here you cant use .content-right that doest change map's width and height, it only changes widht and hieght of div
+  width: 100%;
+  height: 400px;
+  margin: 0;
+}
+
+// Making website responsive
+@media only screen and (min-width: 767px) {
+  // 767px typical mobile devices width
+  /* @media only screen and (min-width: 767px) ----> Styles for screens with a minimum width 
+     of 768px or larger 
+  */
+  #mobile-cta,
+  .mobile-menu-exit {
+    display: none; // --> to hide the hamburgar and exit image.
+  }
+
+  .navbar.container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+  }
+
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%; // --> use to make distance between nav and the logo.
+    padding: 0;
+
+    ul {
+      display: flex;
+    }
+
+    ul a {
+      color: black;
+      font-size: 1rem;
+      padding: 0.1rem 1rem;
+    }
+
+    ul.primary-nav {
+      margin-top: 0; // ---> to position both ul at the same level
+    }
+
+    li.current a {
+      font-weight: bold;
+
+      &:hover {
+        color: var(--second-color);
+      }
+    }
+
+    li.go-premium-cta a {
+      border: 3px solid var(--second-color);
+      border-radius: 5rem;
+      color: var(--second-color);
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--second-color);
+        color: white;
+      }
+    }
+  }
+}
+
+// about width 1080px we want our hero section to divide into 2 columns
+@media only screen and (min-width: 1080px) {
+  // @media only screen and (min-width: 1080px) --> style should apply on the whole screen till we reach min width of 1080px
+  .container {
+    // below margin and width are there to make the content of the page centered before reaching the screen size.
+    width: 1080px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 10rem 3rem;
+  }
+
+  // when writing 2 or more selectors with each other give space between there name when writing them
+  // ex ===> section .hero .container
+  // If you dont do that than the writen combination of selectors is seen as 1 selector as whole.
+  .hero .container {
+    display: flex; // --> if there are 2 things inside your div one over another
+    //  than display flex gonna put them alongside each other (make 2 columns)
+    justify-content: space-between;
+    text-align: left; // to align text to the left
+
+    .left-col {
+      margin: 1rem 4rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bolder;
+      width: 100%;
+    }
+    img {
+      width: 40%;
+      margin-top: -0.1rem;
+    }
+
+    .hero-cta {
+      display: flex; //--> we have 2 <a> one over another so get them alongside of each other use flex.
+    }
+
+    .primary-cta {
+      margin-right: 1rem;
+    }
+  }
+}

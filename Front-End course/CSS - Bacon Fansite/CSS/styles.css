@@ -1,0 +1,43 @@
+/* ************************* Tag Selectors **************************** */
+body{
+    background-color:lightcyan;
+    text-align: center;
+    background-image: url(https://sackvilletravel.com/wp-content/uploads/2018/11/Oualie-Beach-Resort-Nevis-Oualie-Beach-61.jpg);
+    background-size: 100% ;
+    border-style:dotted solid dashed double;
+    border-width: 10px;
+}
+h1{
+    border-top-style: outset;
+    border-top-width: 5px; 
+    font-size:100px;
+    color: red;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+img:hover{
+    background-color: yellow;
+    width: 200px;
+}
+
+/* ************************* Class Selectors **************************** */
+.a{
+    background-color: red;
+}
+.bacon{
+    border-radius: 10%;
+}
+.b{
+    background-color: green;
+    border-radius: 10%;
+}
+
+/* ************************* id Selectors **************************** */
+#heading{
+    color: blue;
+}
+#big{
+    font-size: 1000px;
+}

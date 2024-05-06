@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Poppins&display=swap");
+/*
+    Remember --->
+    1) when writing html code, in mind always think of desktop layout not mobile.
+    2) When writing css code, in mind always think of mobile layout first and after making for mobile then make website for desktop.
+*/
+:root {
+  --primary-color: #31087b;
+  --second-color: #fb2576;
+}
+
+/*
+    --> Above ":root" is a keyword and it is a way to make custom    made properties.
+    ---> WE make custom-properties when one property is being used all over the css file, and if we want to change it's value then we can just change its value from a one location( making this generic).
+    --> to use these properties, we need to use ## variable(<property-name>) .
+    Ex-- color:var(--primary-color); --> on line 48
+*/
+body {
+  background-color: #ecf8f9;
+  margin: 0;
+  font-family: "Overpass", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 
+    selector{
+        styles
+    }
+*/
+.navbar {
+  background: white;
+  padding: 1%;
+}
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 30px;
+}
+.navbar .logo span {
+  color: var(--second-color);
+}
+.navbar .mobile-menu-exit {
+  cursor: pointer;
+  float: right;
+  margin: 1rem;
+}
+.navbar nav.mobile-btn {
+  display: block;
+}
+.navbar nav {
+  display: none;
+  position: fixed;
+  background-color: rgb(45, 43, 43);
+  z-index: 999;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  padding: 1rem;
+}
+.navbar nav ul.primary-nav {
+  margin-top: 5rem;
+}
+.navbar nav li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+  font-size: 1.3rem;
+  text-align: right;
+}
+.navbar nav li a:hover {
+  font-weight: bold;
+}
+.navbar .container {
+  display: flex;
+  place-content: space-between;
+}
+.navbar .mobile-menu {
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: #444444;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+
+.left-col .subhead {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: rgb(106, 106, 168);
+  letter-spacing: 0.1rem;
+}
+.left-col h1 {
+  font-size: 2.5rem;
+  line-height: 1.3em;
+  margin-top: 0;
+  color: var(--primary-color);
+}
+.left-col .primary-cta {
+  background-color: var(--second-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 2.5rem;
+  font-size: 1.3rem;
+  border-radius: 8rem;
+  font-weight: bolder;
+  display: inline-block;
+}
+.left-col .watch-video-cta {
+  display: block;
+  margin-top: 1.5rem;
+}
+.left-col .watch-video-cta i {
+  margin-right: 0.5rem;
+}
+
+.hero-image-cta {
+  width: 70%;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.features-section {
+  background-color: #20272e;
+  color: white;
+}
+
+ul.features-list {
+  margin: 0;
+  padding-left: 0.1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+ul.features-list li {
+  font-size: 1.1em;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  position: relative;
+}
+ul.features-list li::before {
+  content: " ";
+  position: absolute;
+  left: 1.5em;
+  width: 20px;
+  height: 20px;
+  background-image: url(../Images/bullet.svg);
+  background-size: contain;
+  margin-left: -3.6rem;
+}
+
+.features-section-img {
+  display: none;
+}
+
+.testimonial-section {
+  background-color: #af0171;
+}
+.testimonial-section li {
+  background-color: #fb2576;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin: 0 auto 5rem auto;
+  border-radius: 1rem;
+}
+.testimonial-section li img {
+  height: 7em;
+  width: 7em;
+  border: 4px solid #fb2576;
+  border-radius: 50%;
+  margin-top: -70px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+label {
+  display: block;
+  margin: 30px 0 20px 0;
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 40%;
+  border-radius: 5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: var(--second-color);
+  color: white;
+  margin-bottom: 5rem;
+  border: none;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  width: unset;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 767px) {
+  /* @media only screen and (min-width: 767px) ----> Styles for screens with a minimum width 
+     of 768px or larger 
+  */
+  #mobile-cta,
+  .mobile-menu-exit {
+    display: none;
+  }
+  .navbar.container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+  }
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .navbar nav ul {
+    display: flex;
+  }
+  .navbar nav ul a {
+    color: black;
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+  }
+  .navbar nav ul.primary-nav {
+    margin-top: 0;
+  }
+  .navbar nav li.current a {
+    font-weight: bold;
+  }
+  .navbar nav li.current a:hover {
+    color: var(--second-color);
+  }
+  .navbar nav li.go-premium-cta a {
+    border: 3px solid var(--second-color);
+    border-radius: 5rem;
+    color: var(--second-color);
+    font-weight: bold;
+  }
+  .navbar nav li.go-premium-cta a:hover {
+    background-color: var(--second-color);
+    color: white;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 10rem 3rem;
+  }
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .hero .container .left-col {
+    margin: 1rem 4rem;
+  }
+  .hero .container h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    width: 100%;
+  }
+  .hero .container img {
+    width: 40%;
+    margin-top: -0.1rem;
+  }
+  .hero .container .hero-cta {
+    display: flex;
+  }
+  .hero .container .primary-cta {
+    margin-right: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #05b385;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bars {
+  display: block;
+  cursor: pointer;
+  @keyframes move_down {
+    from {
+      margin-bottom: 0;
+    }
+    to {
+      margin-bottom: -1.5rem;
+    }
+  }
+
+  .one-bar {
+    height: 0.5rem;
+    width: 80px;
+    background-color: white;
+    border-radius: 0.2rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.4);
+    animation: move_down 0.5s linear 0s alternate 1;
+  }
+
+  // margin-bottom: -1.5rem;
+
+  .two-bar {
+    height: 0.5rem;
+    width: 80px;
+    background-color: white;
+    border-radius: 0.2rem;
+    margin-top: 1rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .three-bar {
+    height: 0.5rem;
+    width: 80px;
+    background-color: white;
+    border-radius: 0.2rem;
+    margin-top: 1rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// cross css
+.cross {
+  display: none;
+  cursor: pointer;
+  .one-cross {
+    height: 0.5rem;
+    width: 80px;
+    background-color: white;
+    border-radius: 0.2rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: rotate(45deg);
+  }
+
+  .two-cross {
+    height: 0.5rem;
+    width: 80px;
+    background-color: white;
+    border-radius: 0.2rem;
+    margin-top: -0.5rem;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: rotate(-45deg);
+  }
+}
+
+.three-bar.colapse-below-bar {
+  margin-top: -0.5rem;
+}
